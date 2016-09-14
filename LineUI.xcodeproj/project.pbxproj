@@ -14,6 +14,10 @@
 		B039DED91D8A0BFD00A88378 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B039DED81D8A0BFD00A88378 /* ChatViewController.swift */; };
 		B039DEDD1D8A0EB700A88378 /* KeyBoardMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B039DEDC1D8A0EB700A88378 /* KeyBoardMenuView.swift */; };
 		B039DEDF1D8A0F0C00A88378 /* KeyBoardMenuView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B039DEDE1D8A0F0C00A88378 /* KeyBoardMenuView.xib */; };
+		B039DEE21D8A104A00A88378 /* StampCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B039DEE01D8A104A00A88378 /* StampCollectionViewCell.swift */; };
+		B039DEE31D8A104A00A88378 /* StampCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B039DEE11D8A104A00A88378 /* StampCollectionViewCell.xib */; };
+		B039DEE61D8A109C00A88378 /* KeyBoardMenuCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B039DEE41D8A109C00A88378 /* KeyBoardMenuCollectionViewCell.swift */; };
+		B039DEE71D8A109C00A88378 /* KeyBoardMenuCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B039DEE51D8A109C00A88378 /* KeyBoardMenuCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +30,10 @@
 		B039DED81D8A0BFD00A88378 /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		B039DEDC1D8A0EB700A88378 /* KeyBoardMenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyBoardMenuView.swift; sourceTree = "<group>"; };
 		B039DEDE1D8A0F0C00A88378 /* KeyBoardMenuView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KeyBoardMenuView.xib; sourceTree = "<group>"; };
+		B039DEE01D8A104A00A88378 /* StampCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StampCollectionViewCell.swift; sourceTree = "<group>"; };
+		B039DEE11D8A104A00A88378 /* StampCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StampCollectionViewCell.xib; sourceTree = "<group>"; };
+		B039DEE41D8A109C00A88378 /* KeyBoardMenuCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyBoardMenuCollectionViewCell.swift; sourceTree = "<group>"; };
+		B039DEE51D8A109C00A88378 /* KeyBoardMenuCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KeyBoardMenuCollectionViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +70,10 @@
 				B039DED81D8A0BFD00A88378 /* ChatViewController.swift */,
 				B039DEDC1D8A0EB700A88378 /* KeyBoardMenuView.swift */,
 				B039DEDE1D8A0F0C00A88378 /* KeyBoardMenuView.xib */,
+				B039DEE41D8A109C00A88378 /* KeyBoardMenuCollectionViewCell.swift */,
+				B039DEE51D8A109C00A88378 /* KeyBoardMenuCollectionViewCell.xib */,
+				B039DEE01D8A104A00A88378 /* StampCollectionViewCell.swift */,
+				B039DEE11D8A104A00A88378 /* StampCollectionViewCell.xib */,
 				B039DECA1D8A096900A88378 /* Main.storyboard */,
 				B039DECD1D8A096900A88378 /* Assets.xcassets */,
 				B039DECF1D8A096900A88378 /* LaunchScreen.storyboard */,
@@ -129,6 +141,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B039DEE71D8A109C00A88378 /* KeyBoardMenuCollectionViewCell.xib in Resources */,
+				B039DEE31D8A104A00A88378 /* StampCollectionViewCell.xib in Resources */,
 				B039DED11D8A096900A88378 /* LaunchScreen.storyboard in Resources */,
 				B039DECE1D8A096900A88378 /* Assets.xcassets in Resources */,
 				B039DEDF1D8A0F0C00A88378 /* KeyBoardMenuView.xib in Resources */,
@@ -143,6 +157,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B039DEE61D8A109C00A88378 /* KeyBoardMenuCollectionViewCell.swift in Sources */,
+				B039DEE21D8A104A00A88378 /* StampCollectionViewCell.swift in Sources */,
 				B039DED91D8A0BFD00A88378 /* ChatViewController.swift in Sources */,
 				B039DEDD1D8A0EB700A88378 /* KeyBoardMenuView.swift in Sources */,
 				B039DEC71D8A096900A88378 /* AppDelegate.swift in Sources */,
