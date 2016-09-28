@@ -10,6 +10,11 @@ import Foundation
 import UIKit
 
 final class ChatViewController: UIViewController {
+    @IBOutlet fileprivate weak var chatCollectionView: ChatCollectionView! {
+        didSet {
+            chatCollectionView.chatDataSource = self
+        }
+    }
     @IBOutlet private weak var inputTextView: UIView!
     @IBOutlet private weak var keyBoardView: UIView!
     @IBOutlet private weak var textField: UITextField!
@@ -28,7 +33,8 @@ final class ChatViewController: UIViewController {
     
     var pageViewController: UIPageViewController?
     var stampViewControllers = [StampViewController]()
-    
+    fileprivate var messages: [Message] = [
+    ]
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
 
@@ -50,6 +56,8 @@ final class ChatViewController: UIViewController {
         pageViewController!.setViewControllers([stampViewControllers[0]], direction: .forward, animated: false, completion: nil)
         
         NotificationCenter.default.addObserver(self, selector: #selector(showKeyboard(notification:)), name: NSNotification.Name.UIKeyboardDidShow, object: nil)
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(chatCollectionViewTapped(sender:)))
+        chatCollectionView.addGestureRecognizer(tapGesture)
     }
     
     func showKeyboard(notification: Notification) {
@@ -77,7 +85,18 @@ final class ChatViewController: UIViewController {
     }
     
     @IBAction func sendButtonTapped(_ sender: AnyObject) {
+        guard let inputText = textField.text else {
+            return
+        }
+        
+        guard inputText.characters.count > 2 && !inputText.isEmpty else {
+            return
+        }
+        
+        let message = Message(.text, text: inputText, creatAt: Date(), isReceived: false)
+        messages.append(message)
         textField.text = ""
+        chatCollectionView.reloadData()
     }
     
     @IBAction func stampButtonTapped(_ sender: AnyObject) {
@@ -85,6 +104,13 @@ final class ChatViewController: UIViewController {
             textField.resignFirstResponder()
         }
         showKeyboard()
+    }
+    
+    func chatCollectionViewTapped(sender: UITapGestureRecognizer) {
+        if textField.isFirstResponder {
+            textField.resignFirstResponder()
+            hiddenKeyboard()
+        }
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -150,5 +176,15 @@ extension ChatViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 0
+    }
+}
+
+extension ChatViewController: ChatCollectionViewDataSource {
+    func numberOfItemsInSection() -> Int {
+        return messages.count
+    }
+    
+    func cellForItemAt(_ indexPath: IndexPath) -> Message {
+        return messages[indexPath.item]
     }
 }

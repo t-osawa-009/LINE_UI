@@ -20,6 +20,10 @@
 		B06E972F1D9BF23600F1C1EF /* ClassNameExtesion.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06E972E1D9BF23600F1C1EF /* ClassNameExtesion.swift */; };
 		B0BBBCE51D9BF59200875851 /* UICollectionViewExtesion.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0BBBCE41D9BF59200875851 /* UICollectionViewExtesion.swift */; };
 		B0BBBCE71D9C140500875851 /* ChatCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0BBBCE61D9C140500875851 /* ChatCollectionView.swift */; };
+		B0BBBCF21D9C1A4700875851 /* ChatCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0BBBCF01D9C1A4700875851 /* ChatCollectionViewCell.swift */; };
+		B0BBBCF31D9C1A4700875851 /* ChatCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B0BBBCF11D9C1A4700875851 /* ChatCollectionViewCell.xib */; };
+		B0BBBCF51D9C1CA600875851 /* StringExtesion.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0BBBCF41D9C1CA600875851 /* StringExtesion.swift */; };
+		B0BBBCFA1D9C207600875851 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0BBBCF91D9C207600875851 /* Message.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +42,10 @@
 		B06E972E1D9BF23600F1C1EF /* ClassNameExtesion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassNameExtesion.swift; sourceTree = "<group>"; };
 		B0BBBCE41D9BF59200875851 /* UICollectionViewExtesion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICollectionViewExtesion.swift; sourceTree = "<group>"; };
 		B0BBBCE61D9C140500875851 /* ChatCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatCollectionView.swift; sourceTree = "<group>"; };
+		B0BBBCF01D9C1A4700875851 /* ChatCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatCollectionViewCell.swift; sourceTree = "<group>"; };
+		B0BBBCF11D9C1A4700875851 /* ChatCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChatCollectionViewCell.xib; sourceTree = "<group>"; };
+		B0BBBCF41D9C1CA600875851 /* StringExtesion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtesion.swift; sourceTree = "<group>"; };
+		B0BBBCF91D9C207600875851 /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +82,7 @@
 				B0BBBCE91D9C14D700875851 /* Assets */,
 				B0BBBCEA1D9C14FD00875851 /* Extensions */,
 				B0BBBCEB1D9C154200875851 /* Frontend */,
+				B0BBBCF61D9C203200875851 /* Model */,
 				B039DED21D8A096900A88378 /* Info.plist */,
 			);
 			path = LineUI;
@@ -101,6 +110,7 @@
 			children = (
 				B06E972E1D9BF23600F1C1EF /* ClassNameExtesion.swift */,
 				B06E972C1D9BF1A600F1C1EF /* StoryBoardInstantiatable.swift */,
+				B0BBBCF41D9C1CA600875851 /* StringExtesion.swift */,
 				B0BBBCE41D9BF59200875851 /* UICollectionViewExtesion.swift */,
 			);
 			path = Extensions;
@@ -148,8 +158,18 @@
 			isa = PBXGroup;
 			children = (
 				B0BBBCE61D9C140500875851 /* ChatCollectionView.swift */,
+				B0BBBCF01D9C1A4700875851 /* ChatCollectionViewCell.swift */,
+				B0BBBCF11D9C1A4700875851 /* ChatCollectionViewCell.xib */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		B0BBBCF61D9C203200875851 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B0BBBCF91D9C207600875851 /* Message.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -215,6 +235,7 @@
 				B039DED11D8A096900A88378 /* LaunchScreen.storyboard in Resources */,
 				B06E97291D9BEEAA00F1C1EF /* StampViewController.storyboard in Resources */,
 				B039DECE1D8A096900A88378 /* Assets.xcassets in Resources */,
+				B0BBBCF31D9C1A4700875851 /* ChatCollectionViewCell.xib in Resources */,
 				B039DECC1D8A096900A88378 /* ChatViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -229,10 +250,13 @@
 				B06E972F1D9BF23600F1C1EF /* ClassNameExtesion.swift in Sources */,
 				B0BBBCE71D9C140500875851 /* ChatCollectionView.swift in Sources */,
 				B06E972B1D9BEEBF00F1C1EF /* StampViewController.swift in Sources */,
+				B0BBBCF51D9C1CA600875851 /* StringExtesion.swift in Sources */,
 				B039DEE21D8A104A00A88378 /* StampCollectionViewCell.swift in Sources */,
 				B039DED91D8A0BFD00A88378 /* ChatViewController.swift in Sources */,
+				B0BBBCFA1D9C207600875851 /* Message.swift in Sources */,
 				B039DEC71D8A096900A88378 /* AppDelegate.swift in Sources */,
 				B06E972D1D9BF1A600F1C1EF /* StoryBoardInstantiatable.swift in Sources */,
+				B0BBBCF21D9C1A4700875851 /* ChatCollectionViewCell.swift in Sources */,
 				B0BBBCE51D9BF59200875851 /* UICollectionViewExtesion.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

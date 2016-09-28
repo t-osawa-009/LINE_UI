@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="ChatCollectionViewCell" customModule="LineUI" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="371" height="50"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="371" height="50"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nQG-IT-q2f">
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Hh-PK-Ypi">
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="0Hh-PK-Ypi" secondAttribute="bottom" constant="5" id="Orz-vC-0hk"/>
+                            <constraint firstItem="0Hh-PK-Ypi" firstAttribute="top" secondItem="nQG-IT-q2f" secondAttribute="top" constant="5" id="cCg-az-aud"/>
+                            <constraint firstItem="0Hh-PK-Ypi" firstAttribute="leading" secondItem="nQG-IT-q2f" secondAttribute="leading" constant="5" id="ch9-j0-bdh"/>
+                            <constraint firstAttribute="width" constant="120" id="gVr-Ne-Wj9"/>
+                            <constraint firstAttribute="trailing" secondItem="0Hh-PK-Ypi" secondAttribute="trailing" constant="5" id="yOZ-qU-tNQ"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="nQG-IT-q2f" secondAttribute="bottom" constant="10" id="4cQ-37-tGs"/>
+                <constraint firstItem="nQG-IT-q2f" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="10" id="BPq-p8-PFf"/>
+                <constraint firstAttribute="trailing" secondItem="nQG-IT-q2f" secondAttribute="trailing" constant="10" id="uTv-xI-AJf"/>
+            </constraints>
+            <size key="customSize" width="371" height="50"/>
+            <connections>
+                <outlet property="ballonLabel" destination="0Hh-PK-Ypi" id="2t3-5N-wwR"/>
+                <outlet property="ballonView" destination="nQG-IT-q2f" id="6a0-TR-cHC"/>
+            </connections>
+            <point key="canvasLocation" x="47.5" y="160"/>
+        </collectionViewCell>
+    </objects>
+</document>
