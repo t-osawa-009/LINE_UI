@@ -9,6 +9,12 @@
 import UIKit
 
 final class StampCollectionViewCell: UICollectionViewCell {
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        imageView.image = nil
+    }
+    
+    @IBOutlet weak var imageView: UIImageView!
 
     override func awakeFromNib() {
         super.awakeFromNib()

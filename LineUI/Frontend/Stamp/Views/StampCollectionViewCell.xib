@@ -15,7 +15,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cmS-6G-mDn"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="warai_flat" translatesAutoresizingMaskIntoConstraints="NO" id="cmS-6G-mDn"/>
                 </subviews>
             </view>
             <constraints>
@@ -24,6 +24,12 @@
                 <constraint firstItem="cmS-6G-mDn" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="Wzf-sC-JAF"/>
                 <constraint firstItem="cmS-6G-mDn" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="kgE-ar-daJ"/>
             </constraints>
+            <connections>
+                <outlet property="imageView" destination="cmS-6G-mDn" id="5Xj-3F-lso"/>
+            </connections>
         </collectionViewCell>
     </objects>
+    <resources>
+        <image name="warai_flat" width="240" height="240"/>
+    </resources>
 </document>
