@@ -34,8 +34,8 @@ final class ChatViewController: UIViewController {
     
     var pageViewController: UIPageViewController?
     var stampViewControllers = [StampViewController]()
-    fileprivate var messages: [Message] = [
-    ]
+    fileprivate var messages: [Message] = []
+    fileprivate var currentIndex = 0
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
 
@@ -47,7 +47,7 @@ final class ChatViewController: UIViewController {
         self.keyBoardView.transform = CGAffineTransform(translationX: 0, y: self.keyBoardHeightConstraint.constant)
         chatCollectionViewBottomConstraint.constant = -keyBoardHeightConstraint.constant
         
-        for index in 0...9 {
+        for index in 0..<Constants.icons.count {
             let viewController = StampViewController.instantiate()
             viewController.pageNumber = index
             stampViewControllers.append(viewController)
@@ -55,6 +55,7 @@ final class ChatViewController: UIViewController {
         
         pageViewController = childViewControllers[0] as? UIPageViewController
         pageViewController!.dataSource = self
+        pageViewController?.delegate = self
         pageViewController!.setViewControllers([stampViewControllers[0]], direction: .forward, animated: false, completion: nil)
         
         NotificationCenter.default.addObserver(self, selector: #selector(showKeyboard(notification:)), name: NSNotification.Name.UIKeyboardDidShow, object: nil)
@@ -140,6 +141,25 @@ final class ChatViewController: UIViewController {
             hiddenKeyboard()
         }
     }
+    
+    fileprivate func selectedPageViewController(pageNumber: Int, animated: Bool) {
+        guard currentIndex != pageNumber else {
+            return
+        }
+        let directioin: UIPageViewControllerNavigationDirection = {
+            if self.currentIndex > pageNumber {
+                return .reverse
+            } else {
+                return .forward
+            }
+        }()
+        let currentViewController = stampViewControllers[pageNumber]
+        if let pageViewController = pageViewController {
+            pageViewController.setViewControllers([currentViewController],
+                                                  direction: directioin, animated: animated, completion: nil)
+        }
+        currentIndex = pageNumber
+    }
 }
 
 extension ChatViewController: UIPageViewControllerDataSource {
@@ -163,21 +183,30 @@ extension ChatViewController: UIPageViewControllerDataSource {
     }
 }
 
+extension ChatViewController: UIPageViewControllerDelegate {
+    func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
+        guard finished else { return }
+        guard let contentViewController = pageViewController.viewControllers?.first else { return }
+        guard let index = stampViewControllers.index(of: contentViewController as! StampViewController) , index < stampViewControllers.count - 1 else { return }
+        currentIndex = index
+    }
+}
+
 extension ChatViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 9
+        return Constants.icons.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(with: StampCollectionViewCell.self, for: indexPath)
-        cell.imageView.image = #imageLiteral(resourceName: "warai_flat")
+        cell.imageView.image = Constants.icons[indexPath.item]
         return cell
     }
 }
 
 extension ChatViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
+        selectedPageViewController(pageNumber: indexPath.item, animated: true)
     }
 }
 

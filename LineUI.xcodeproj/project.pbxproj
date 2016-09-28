@@ -24,6 +24,7 @@
 		B0BBBCF31D9C1A4700875851 /* ChatCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B0BBBCF11D9C1A4700875851 /* ChatCollectionViewCell.xib */; };
 		B0BBBCF51D9C1CA600875851 /* StringExtesion.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0BBBCF41D9C1CA600875851 /* StringExtesion.swift */; };
 		B0BBBCFA1D9C207600875851 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0BBBCF91D9C207600875851 /* Message.swift */; };
+		B0BBBCFC1D9C6F9A00875851 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0BBBCFB1D9C6F9A00875851 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		B0BBBCF11D9C1A4700875851 /* ChatCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChatCollectionViewCell.xib; sourceTree = "<group>"; };
 		B0BBBCF41D9C1CA600875851 /* StringExtesion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtesion.swift; sourceTree = "<group>"; };
 		B0BBBCF91D9C207600875851 /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		B0BBBCFB1D9C6F9A00875851 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +95,7 @@
 			children = (
 				B039DEC61D8A096900A88378 /* AppDelegate.swift */,
 				B039DECF1D8A096900A88378 /* LaunchScreen.storyboard */,
+				B0BBBCFB1D9C6F9A00875851 /* Constants.swift */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -258,6 +261,7 @@
 				B06E972D1D9BF1A600F1C1EF /* StoryBoardInstantiatable.swift in Sources */,
 				B0BBBCF21D9C1A4700875851 /* ChatCollectionViewCell.swift in Sources */,
 				B0BBBCE51D9BF59200875851 /* UICollectionViewExtesion.swift in Sources */,
+				B0BBBCFC1D9C6F9A00875851 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

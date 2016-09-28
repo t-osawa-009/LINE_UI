@@ -35,13 +35,7 @@ extension StampViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(with: StampCollectionViewCell.self, for: indexPath)
-            cell.imageView.image =  {
-                if pageNumber % 2 == 1 {
-                    return #imageLiteral(resourceName: "apple-logo")
-                } else {
-                    return #imageLiteral(resourceName: "warai_flat")
-                }
-            }()
+            cell.imageView.image = Constants.icons[pageNumber]
         return cell
     }
 }
