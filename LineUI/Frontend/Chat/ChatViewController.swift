@@ -19,6 +19,7 @@ final class ChatViewController: UIViewController {
     @IBOutlet private weak var keyBoardView: UIView!
     @IBOutlet private weak var textField: UITextField!
     @IBOutlet private weak var keyBoardHeightConstraint: NSLayoutConstraint!
+    @IBOutlet private weak var chatCollectionViewBottomConstraint: NSLayoutConstraint!
     fileprivate let padding: CGFloat = 5.0
     @IBOutlet private weak var collectionView: UICollectionView! {
         didSet {
@@ -44,6 +45,7 @@ final class ChatViewController: UIViewController {
         super.viewDidLoad()
         self.inputTextView.transform = CGAffineTransform(translationX: 0, y: self.keyBoardHeightConstraint.constant)
         self.keyBoardView.transform = CGAffineTransform(translationX: 0, y: self.keyBoardHeightConstraint.constant)
+        chatCollectionViewBottomConstraint.constant = -keyBoardHeightConstraint.constant
         
         for index in 0...9 {
             let viewController = StampViewController.instantiate()
@@ -71,16 +73,34 @@ final class ChatViewController: UIViewController {
     }
     
     fileprivate func showKeyboard() {
-        UIView.animate(withDuration: 0.3) {
+        self.chatCollectionViewBottomConstraint.constant = 0
+        UIView.animate(withDuration: 0.3, animations: {
             self.inputTextView.transform = CGAffineTransform.identity
             self.keyBoardView.transform = CGAffineTransform.identity
+            self.chatCollectionView.layoutIfNeeded()
+        }) { (finished) in
+            if finished {
+                guard self.messages.count > 0 else {
+                    return
+                }
+                self.chatCollectionView.scrollToItem(at: IndexPath.init(item: self.messages.count - 1, section: 0), at: .bottom, animated: false)
+            }
         }
     }
     
     fileprivate func hiddenKeyboard() {
-        UIView.animate(withDuration: 0.3) {
+        chatCollectionViewBottomConstraint.constant = -keyBoardHeightConstraint.constant
+        UIView.animate(withDuration: 0.3, animations: {
             self.inputTextView.transform = CGAffineTransform(translationX: 0, y: self.keyBoardHeightConstraint.constant)
             self.keyBoardView.transform = CGAffineTransform(translationX: 0, y: self.keyBoardHeightConstraint.constant)
+            self.chatCollectionView.layoutIfNeeded()
+        }) { (finished) in
+            if finished {
+                guard self.messages.count > 0 else {
+                    return
+                }
+                self.chatCollectionView.scrollToItem(at: IndexPath.init(item: self.messages.count - 1, section: 0), at: .bottom, animated: false)
+            }
         }
     }
     
@@ -97,6 +117,7 @@ final class ChatViewController: UIViewController {
         messages.append(message)
         textField.text = ""
         chatCollectionView.reloadData()
+        chatCollectionView.scrollToItem(at: IndexPath.init(item: messages.count - 1, section: 0), at: .bottom, animated: false)
     }
     
     @IBAction func stampButtonTapped(_ sender: AnyObject) {

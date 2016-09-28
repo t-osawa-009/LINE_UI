@@ -15,6 +15,11 @@ class ChatCollectionViewCell: UICollectionViewCell {
         return textHeight + margin
     }
     
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        ballonLabel.text = nil
+    }
+    
     var ballonText: String = "" {
         didSet {
             ballonLabel.text = ballonText
@@ -26,13 +31,12 @@ class ChatCollectionViewCell: UICollectionViewCell {
     @IBOutlet private weak var ballonView: UIView!
     @IBOutlet private weak var ballonLabel: UILabel! {
         didSet {
-            ballonLabel.layer.masksToBounds = true
            
         }
     }
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        ballonView.layer.cornerRadius = ballonView.bounds.height / 3
+        ballonView.layer.cornerRadius = ballonView.bounds.height / 2
     }
 }

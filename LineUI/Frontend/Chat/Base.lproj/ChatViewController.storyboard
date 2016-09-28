@@ -136,6 +136,7 @@
                     </view>
                     <connections>
                         <outlet property="chatCollectionView" destination="BBo-VT-pnY" id="Pqa-np-oJL"/>
+                        <outlet property="chatCollectionViewBottomConstraint" destination="tvl-mR-8Jy" id="VxJ-ov-HTI"/>
                         <outlet property="collectionView" destination="VNf-g5-fyz" id="pVc-9Z-t8T"/>
                         <outlet property="inputTextView" destination="Zdd-9m-yXB" id="RSq-oD-6ug"/>
                         <outlet property="keyBoardHeightConstraint" destination="mXK-83-I7f" id="4eX-BZ-PPN"/>
